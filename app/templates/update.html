@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body class="addback">
+    <div class="addcontainer">
+      <h1 class="title">Update {{ task.name }}</h1>
+      <div class="form">
+        <div class="heading">Update your task!</div>
+        <div class="addform">
+          <form action="/task/edit" method="POST">
+            <div class="row">
+              <input type="hidden" name="id" value="{{task.id}}" />
+              <label for="urgency">Urgency</label>
+            </div>
+            <div class="row">
+              <select name="urgency" id="urgency" value="{{ task.urgency }}">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <div class="row">
+              <label for="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value="{{ task.name }}"
+              />
+            </div>
+            <div class="row">
+              <label for="date">Due Date:</label>
+              <input
+                type="date"
+                id="date"
+                name="date"
+                value="{{ task.date }}"
+              />
+            </div>
+            <div class="addbutt">
+              <button class="btn" type="submit">Update Task</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard">
+      <a href="/dashboard"> <button class="dashboardbutt">Dashboard</button></a>
+    </div>
+  </body>
+</html>

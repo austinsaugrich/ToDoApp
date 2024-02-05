@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body class="addback">
+    <div class="addcontainer">
+      <h1 class="title">Todo List: Add a new item!</h1>
+      <div class="form">
+        <div class="heading">Make a new task!</div>
+        <div class="addform">
+          <form action="/add/task" method="POST">
+            <div class="row">
+              <label for="urgency">Urgency:</label>
+              <select name="urgency" id="urgency">
+                <option value="1">1 - Priority</option>
+                <option value="2">2 - Normal</option>
+                <option value="3">3 - Low</option>
+              </select>
+            </div>
+            <div class="row">
+              <label for="name">Name of your task:</label>
+              <input type="text" placeholder="Shopping" id="name" name="name" />
+            </div>
+            <div class="row">
+              <label for="date">Date of completion:</label>
+              <input type="date" id="date" name="date" />
+            </div>
+            <div class="addbutt">
+              <button class="btn" type="submit">Add Task</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard">
+      <a href="/dashboard"> <button class="dashboardbutt">Dashboard</button></a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body class="addback">
+    <div class="addcontainer">
+      <h1 class="title">View {{task.name}}</h1>
+      <div class="view">
+        <div class="heading">This is task: {{task.name}}</div>
+        <div class="viewform">
+          <div class="col">Name: {{task.name}}</div>
+          <div class="col">Urgency: {{task.urgency}}</div>
+          <div class="col">Due Date: {{task.date}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard">
+      <a href="/dashboard"> <button class="dashboardbutt">Dashboard</button></a>
+    </div>
+  </body>
+</html>

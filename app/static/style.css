@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table,
+th,
+td {
+  border: 2px solid black;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.table tr th {
+  background: #8a307f;
+  color: white;
+}
+
+.table tr:nth-child(even) td {
+  background-color: #6883bc;
+  color: white;
+}
+
+.table tr:nth-child(odd) td {
+  background-color: #708090;
+  color: white;
+}
+
+.addcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  color: white;
+}
+.form {
+  display: flex;
+  background-color: #6883bc;
+  flex-direction: column;
+  height: 400px;
+  margin-top: 150px;
+  border: 3px solid black;
+  border-radius: 10%;
+  justify-content: center;
+}
+
+.heading {
+  display: flex;
+  height: 50px;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  width: auto;
+  align-items: center;
+  background-color: #8a307f;
+}
+
+.addform {
+  display: flex;
+  width: 400px;
+  justify-content: center;
+}
+.addbutt {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+.title {
+  background-color: #8a307f;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.addback {
+  background-color: #79a7d3;
+}
+
+.dashboardbutt {
+  width: 200px;
+  height: 50px;
+  border: 3px solid black;
+  border-radius: 50px;
+  background-color: #8a307f;
+  color: white;
+}
+
+.dashboardbutt:hover {
+  cursor: pointer;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.row label {
+  padding-bottom: 5px;
+}
+
+.btn {
+  background-color: #8a307f;
+  color: white;
+  border: 3px solid black;
+  border-radius: 50px;
+  width: 100px;
+}
+
+.view {
+  display: flex;
+  background-color: #6883bc;
+  flex-direction: column;
+  height: 400px;
+  margin-top: 150px;
+  border: 3px solid black;
+  border-radius: 10%;
+  padding-top: 2em;
+}
+
+.col {
+  display: flex;
+  color: white;
+  padding: 0.5em;
+}
+
+.viewform {
+  display: flex;
+  width: 400px;
+  height: 250px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainbtn {
+  background-color: #8a307f;
+  color: white;
+  border: 3px solid black;
+  border-radius: 50px;
+  width: 100px;
+}

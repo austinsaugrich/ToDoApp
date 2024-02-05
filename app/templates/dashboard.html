@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="addback">
+    <div class="container">
+      <table class="table">
+        <tr class="tabletitle">
+          <th scope="col">Name of your task</th>
+          <th scope="col">The urgency of your task</th>
+          <th scope="col">Date it needs to be completed by</th>
+          <th scope="col"></th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+          <td>{{ task.name }}</td>
+          <td>{{ task.urgency }}</td>
+          <td>{{ task.date }}</td>
+          <td>
+            <a href="/task/{{ task.id }}"
+              ><button class="mainbtn">View</button></a
+            >
+            <a href="/task/edit/{{ task.id }}"
+              ><button class="mainbtn">Edit</button></a
+            >
+            <a href="/task/delete/{{ task.id }}"
+              ><button class="mainbtn">Delete</button></a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+      <a href="/add/task"
+        ><button class="dashboardbutt">Add a new task</button></a
+      >
+    </div>
+  </body>
+</html>
