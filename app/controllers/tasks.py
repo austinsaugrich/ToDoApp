@@ -19,14 +19,6 @@ def pull_task_by_id(id):
             found_task = task
     return found_task
 
-# clear session data
-
-
-@app.route('/')
-def clearses():
-    # session.clear()
-    # return 'session cleared!'
-    return redirect('/dashboard')
 
 # new task form
 
@@ -44,7 +36,15 @@ def add_task_form():
 @app.route('/add/task', methods=['POST'])
 def add_task():
     # form = request.form
-    Task.add(request.form)
+    data = {
+        'name': request.form['name'],
+        'urgency': request.form['urgency'],
+        'date': request.form['date'],
+        'users_id': session['user_id']
+    }
+    Task.add(data)
+
+
 # used for session, switched to db
 
     # tasks = session['tasks']
@@ -118,4 +118,4 @@ def dashboard():
     # if 'tasks' not in session:
     # session['tasks'] = Tasks
 
-    return render_template('dashboard.html', tasks=Task.get_all())
+    return render_template('dashboard.html', tasks=Task.get_task_by_user_id(session['user_id']))

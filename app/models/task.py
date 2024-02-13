@@ -11,8 +11,8 @@ class Task:
     @classmethod
     def add(cls, data):
         query = """
-        INSERT INTO tasks(name, urgency, date)
-VALUES(%(name)s, %(urgency)s, %(date)s);
+        INSERT INTO tasks(name, urgency, date, users_id)
+VALUES(%(name)s, %(urgency)s, %(date)s, %(users_id)s);
         """
 
         return MySQLConnection('tasks').query_db(query, data)
@@ -50,3 +50,14 @@ WHERE tasks.id = %(id)s
         results = MySQLConnection('tasks').query_db(query, {'id': id})
 
         return Task(results[0])
+
+    @classmethod
+    def get_task_by_user_id(cls, id):
+        query = 'SELECT * FROM tasks WHERE users_id = %(id)s;'
+
+        results = MySQLConnection('tasks').query_db(query, {'id': id})
+
+        all_tasks = []
+        for row in results:
+            all_tasks.append(Task(row))
+        return all_tasks
